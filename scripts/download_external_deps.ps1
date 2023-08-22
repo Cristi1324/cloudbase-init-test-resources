@@ -3,9 +3,9 @@ param(
     $cloud
 )
 
-$Erroractionpreference = "Stop"
+$ErrorActionPreference = "Stop"
 $myPath = $MyInvocation.MyCommand.Path
-$repoPath = Split-Path $path -Parent | Split-Path -Parent
+$repoPath = Split-Path $mypath -Parent | Split-Path -Parent
 
 function Main {
     cd "${repoPath}/${cloud}"
