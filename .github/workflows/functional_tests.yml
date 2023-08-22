@@ -13,19 +13,21 @@ jobs:
         cloud: [openstack,cloudstack,ovf,empty,vmwareguest,nocloud]
 
     steps:
-    - name: Checkout cloudbase-init master repo
+    - name: Checkout cloudbase-init-test-resources master repo
       uses: actions/checkout@v3
       with:
-        repository: ader1990/cloudbase-init-1
-        ref: luqmana_tests
+        repository: Cristi1324/cloudbase-init-test-resources
+        ref: add-scripts
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
         architecture: ${{ matrix.architecture }}
     - name: Download external dependencies
-      shell: pwsh
+      shell: powershell
       run: |
+        ls
+        ls ./scripts
         ./scripts/download_external_deps.ps1 -cloud ${{ matrix.cloud }}
     - name: Install local dependencies
       shell: powershell
