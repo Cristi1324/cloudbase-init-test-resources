@@ -24,9 +24,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
         architecture: ${{ matrix.architecture }}
     - name: Download external dependencies
-      shell: powershell
+      shell: pwsh
       run: |
-        .\scripts\download_external_deps.ps1 -cloud matrix.cloud
+        ./scripts/download_external_deps.ps1 -cloud ${{ matrix.cloud }}
     - name: Install local dependencies
       shell: powershell
       run: |
