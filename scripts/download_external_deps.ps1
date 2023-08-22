@@ -3,6 +3,7 @@ param(
     $cloud
 )
 
+$Erroractionpreference = "Stop"
 $myPath = $MyInvocation.MyCommand.Path
 $repoPath = Split-Path $path -Parent | Split-Path -Parent
 
